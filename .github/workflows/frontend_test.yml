@@ -23,13 +23,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install dependencies
-        run: |
-        npm install
-        |
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          # cd: cd ./Top5Lister/client
+          install: npm install
           build: npm run build
           start: npm start
