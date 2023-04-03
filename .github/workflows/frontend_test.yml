@@ -23,9 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          install: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          install: npm install
-          # build: npm run build
+          # install: npm install
+          build: npm run build
           start: npm start
